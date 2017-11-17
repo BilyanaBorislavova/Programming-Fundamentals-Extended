@@ -10,21 +10,19 @@ namespace _06.Odd_Numbers_at_Odd_Positions
     {
         static void Main(string[] args)
         {
-            List<int> numbers = Console.ReadLine()
+            List<int> nums = Console.ReadLine()
                 .Split(' ')
                 .Select(int.Parse)
                 .ToList();
 
-            var oddCategories = numbers.ToList().Where((c, i) => i % 2 != 0);
-            var oddNumbers = oddCategories.Where(num => num % 2 != 0);
-            
-            foreach (int num in oddNumbers)
+
+            for (int i = 0; i < nums.Count; i++)
             {
-                int i = numbers.IndexOf(num);
-                Console.WriteLine($"Index {i} -> {num}");
+                if (i % 2 != 0 && nums[i] % 2 != 0)
+                {
+                    Console.WriteLine($"Index {i} -> {nums[i]}");
+                }
             }
-
-
         }
     }
 }
